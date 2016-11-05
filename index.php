@@ -4,22 +4,26 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Index</title>      
+    <script src="/scripts/jquery-1.10.2.js" type="text/javascript"></script>	
+    <script src="/scripts/jquery-1.10.2.min.js" type="text/javascript"></script>	
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="/scripts/bootstrap.js"></script>	    
     <link href="/css/Navbar.css" rel="stylesheet" />
     <link href="/css/Sidenav.css" rel="stylesheet" />
-	<link href="/css/Index.css" rel="stylesheet" />
-    
-	
+	<link href="/css/Index.css" rel="stylesheet" />      
 </head>
-<body background="/img/Background_Books2.png">
-    <div class="navbar navbar-default navbar-fixed-top">        
-            <div class="navbar-header" style="margin-left: 1%;">                                
-            </div>
-            <div class="navbar-collapse collapse">               
-            </div>
-        
-    </div>
+<body background="/img/Background_Books2.png">                
 
+    <nav class="navbar navbar-light bg-faded">
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" href="#">Features</a>
+    <a class="nav-item nav-link" href="#">Pricing</a>
+    <a class="nav-item nav-link" href="#">About</a>
+  </div>
+</nav>
+    
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -47,14 +51,8 @@
             </ul>
         </div>        
         <div class="container body-content">            
-            <br />        
-                
-        
+            <br />                                
             </div>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required:=False)
 
    <h1 style = "font-size: 450%;">Welcome to the West Wumbo Library</h1>            
     <br />
