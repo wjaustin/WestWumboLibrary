@@ -7,34 +7,25 @@
     <title>Index</title>      
     <script src="/scripts/jquery-1.10.2.js" type="text/javascript"></script>	
     <script src="/scripts/jquery-1.10.2.min.js" type="text/javascript"></script>	
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="/scripts/bootstrap.js"></script>	    
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link href="/css/Navbar.css" rel="stylesheet" />
     <link href="/css/Sidenav.css" rel="stylesheet" />
 	<link href="/css/Index.css" rel="stylesheet" />      
 </head>
 <body background="/img/Background_Books2.png">                
 
-    <nav class="navbar navbar-light bg-faded">
-  <div class="nav navbar-nav">
-    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-    <a class="nav-item nav-link" href="#">Features</a>
-    <a class="nav-item nav-link" href="#">Pricing</a>
-    <a class="nav-item nav-link" href="#">About</a>
-  </div>
-</nav>
-    
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a>
+                    <a>  
                         Quick Links
                     </a>
                 </li>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="index.html">Home</a>
                 </li>
                 <li>
                     <a href="#">Search</a>
@@ -46,7 +37,7 @@
                     <a href="#">Fees</a>
                 </li>                   
                 <li>
-                    <a href="#">Log off</a>
+                    <a href="login.html">Log In</a>
                 </li>
             </ul>
         </div>        
@@ -54,7 +45,7 @@
             <br />                                
             </div>
 
-   <h1 style = "font-size: 450%;">Welcome to the West Wumbo Library</h1>            
+   <h1 style = "font-size: 450%; margin-left: 5%; margin-top: 5%;">Welcome to the West Wumbo Library</h1>            
     <br />
 
     <div class="row top-buffer librarynews">
