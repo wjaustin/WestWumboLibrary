@@ -1,0 +1,10 @@
+.checked-out-item{
+    margin-left: 5%;    
+    margin-right: 5%;
+}
+
+.checked-out-checkbox{
+    display: inline; 
+    float: right; 
+    user-select: none;
+}
