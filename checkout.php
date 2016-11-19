@@ -2,7 +2,8 @@
 <head>
     <?php include './html/header.html'; ?>
     <Title>Checkout</Title>
-    <link href="./css/SolidSidenav.css" rel="stylesheet" />	</head></head>
+    <link href="./css/SolidSidenav.css" rel="stylesheet" />
+    <link href="./css/checkout.css" rel="stylesheet" />
 </head>
 
 <body>
