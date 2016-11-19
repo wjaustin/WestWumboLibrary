@@ -1,12 +1,12 @@
 
 <head>
-    <?php include './scripts/header.html'; ?>
+    <?php include './html/header.html'; ?>
     <link href="./css/SolidSidenav.css" rel="stylesheet" />	</head></head>
 </head>
 <title>Fees</title>
 
 <body>
-<?php include './scripts/navbar.html'; ?>
+<?php include './html/navbar.html'; ?>
 <div id="wrapper">
     <h2 style="margin-left: 3%">Checked Out</h2>   
     <h4 style="margin-left: 3%"></h4>

@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>Index</title>      
-    <?php include './scripts/header.html' ?>    
+    <?php include './html/header.html' ?>    
     <link href="./css/Index.css" rel="stylesheet" /> 
     <link href="./css/Sidenav.css" rel="stylesheet" />
 </head>
 <body background="./img/Background_Books2.png">                
 
-<?php include './scripts/navbar.html'; ?>
+<?php include './html/navbar.html'; ?>
 <div id="wrapper">
     <h1 style = "font-size: 450%; margin-left: 5%; margin-top: 5%;">Welcome to the West Wumbo Library</h1>            
     <br />

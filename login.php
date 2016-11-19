@@ -9,10 +9,10 @@ header("location: checkout.php");
 <!DOCTYPE html>
 <html>
 <head>
-    <?php include './scripts/header.html'; ?>
+    <?php include './html/header.html'; ?>
     <link href="./css/SolidSidenav.css" rel="stylesheet" />	</head>
 <body>
-    <?php include './scripts/navbar.html'; ?>
+    <?php include './html/navbar.html'; ?>
      
     <div id="wrapper">   
         <h2 style="margin-left: 3%">Log in.</h2>   
