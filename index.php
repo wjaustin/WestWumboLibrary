@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>      
+    <title>Home Page</title>      
     <?php include './html/header.html' ?>    
     <link href="./css/Index.css" rel="stylesheet" /> 
     <link href="./css/Sidenav.css" rel="stylesheet" />

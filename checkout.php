@@ -1,9 +1,9 @@
 
 <head>
     <?php include './html/header.html'; ?>
+    <Title>Checkout</Title>
     <link href="./css/SolidSidenav.css" rel="stylesheet" />	</head></head>
 </head>
-<title>Fees</title>
 
 <body>
 <?php include './html/navbar.html'; ?>

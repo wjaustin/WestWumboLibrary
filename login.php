@@ -10,6 +10,7 @@ header("location: checkout.php");
 <html>
 <head>
     <?php include './html/header.html'; ?>
+    <Title>Login</Title>
     <link href="./css/SolidSidenav.css" rel="stylesheet" />	</head>
 <body>
     <?php include './html/navbar.html'; ?>
