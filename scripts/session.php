@@ -1,17 +1,11 @@
 <?php
-// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-$connection = mysql_connect("localhost", "root", "");
-// Selecting Database
-$db = mysql_select_db("company", $connection);
+$con = mysqli_connect("localhost", "root", "", "library");
 session_start();// Starting Session
-// Storing Session
-$user_check=$_SESSION['login_user'];
-// SQL Query To Fetch Complete Information Of User
-$ses_sql=mysql_query("select username from login where username='$user_check'", $connection);
-$row = mysql_fetch_assoc($ses_sql);
-$login_session =$row['username'];
-if(!isset($login_session)){
-mysql_close($connection); // Closing Connection
-header('Location: index.php'); // Redirecting To Home Page
+$user_check = $_SESSION['login_user'];
+$query = mysqli_query($con, "select patron_username from patrons where patron_username='$user_check';");
+$rows = mysqli_num_rows($query);
+if(!isset($rows)){
+    mysqli_close($con); // Closing Connection
+    header('Location: index.php'); // Redirecting To Home Page
 }
 ?>
