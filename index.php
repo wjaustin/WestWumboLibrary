@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>Index</title>      
-    <?php include 'header.html' ?>    
+    <?php include './scripts/header.html' ?>    
     <link href="./css/Index.css" rel="stylesheet" /> 
     <link href="./css/Sidenav.css" rel="stylesheet" />
 </head>
 <body background="./img/Background_Books2.png">                
 
-<?php include 'navbar.html'; ?>
+<?php include './scripts/navbar.html'; ?>
 <div id="wrapper">
     <h1 style = "font-size: 450%; margin-left: 5%; margin-top: 5%;">Welcome to the West Wumbo Library</h1>            
     <br />
@@ -26,5 +26,18 @@
         <p></p>
     </footer>
 </div>
+
+<div id="modalLogout" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">x</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+
+
+
 </body>
 </html>
