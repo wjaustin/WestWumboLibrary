@@ -11,36 +11,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link href="/css/Navbar.css" rel="stylesheet" />
     <link href="/css/Sidenav.css" rel="stylesheet" />
-	<link href="/css/Index.css" rel="stylesheet" />      
+	<link href="/css/Index.css" rel="stylesheet" />          
 </head>
 <body background="/img/Background_Books2.png">                
-
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a>  
-                        Quick Links
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="#">Search</a>
-                </li>
-                <li>
-                    <a href="#">Checked Out</a>
-                </li>
-                <li>
-                    <a href="#">Fees</a>
-                </li>                   
-                <li>
-                    <a href="login.html">Log In</a>
-                </li>
-            </ul>
-        </div>        
+    <?php include("/html/sidenav.html"); ?>
+         
         <div class="container body-content">            
             <br />                                
             </div>
