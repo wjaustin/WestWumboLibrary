@@ -27,7 +27,7 @@ header("location: checkout.php");
                     </div>
                     <div class="form-group row">
                         <label for="passwordInput">Password</label>
-                        <input name="password" type="text" class="form-control" id="password" placeholder="Password">
+                        <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                     </div>
                     <div class="form-group row">
                         <button name="submit" type="submit" class="btn btn-secondary">Log in</button>
