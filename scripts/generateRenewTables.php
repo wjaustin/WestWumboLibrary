@@ -6,7 +6,7 @@ if ($conn -> connect_error) {
 }
 
 $library_card_id = $_SESSION['login_user'];
-$result = mysqli_query($con, "select book.book_title, author.author_fname, author.author_lname, rented_book.date_due 
+$result = mysqli_query($con, "select book.book_title, author.author_fname, author.author_lname, rented_book.date_due, rented_book.rem_renewals 
 from rented_book, book_copy, book, author where library_card_id = $library_card_id;");
 
 // If no rented books, halt execution
@@ -34,8 +34,8 @@ while ($row = $result->fetch_assoc()) {
                                 </div>
                                 <div class ="form-group row">
                                     <h4>';
-    // Book Due Date
-    echo $row["date_due"];
+    // Book Due Date and Remaining Renewals
+    echo 'Due: ' . $row["date_due"] . ' / ' . $row["rem_renewals"] . ' Renewals Remaining';
     echo '</h4>      
                                 </div>
                             </form>
@@ -43,6 +43,6 @@ while ($row = $result->fetch_assoc()) {
                     </div>';
 }
 echo '<div class="form-group row">
-                        <button type="button" class="btn btn-secondary" style="float:right">Renew</button>
+                        <button type="submit" class="btn btn-secondary" style="float:right">Renew</button>
                     </div>';
 ?>
