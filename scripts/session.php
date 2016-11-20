@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "library");
+$con = mysqli_connect("localhost", "wjaustin", "", "library");
 session_start();// Starting Session
 $user_check = $_SESSION['login_user'];
 $query = mysqli_query($con, "select library_card_id from patron where library_card_id='$user_check';");

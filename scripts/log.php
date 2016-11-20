@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
         $error = "Username or Password is invalid";
     }
     else {
-        $con = mysqli_connect("localhost", "root", "", "library");
+        $con = mysqli_connect("localhost", "wjaustin", "", "library");
         $username = mysqli_real_escape_string($con, $_POST['username']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
         $query = mysqli_query($con, "select * from patron where library_card_id='$username' and patron_password='$password';");
