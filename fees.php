@@ -18,13 +18,30 @@ include('./scripts/session.php');
     <div class="row col-md-6" style="left: 5%;">    
         <form>
             <div class="form-group row">    
-                <h4 align="center">Account Fees: $0.00</h4>
+                <h4 align="center">Account Fees: 
+                <?php
+                // Create connection to MySql Database
+                $con = mysqli_connect("localhost", "wjaustin", "", "library");
+                if ($conn -> connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+                
+                $library_card_id = $_SESSION['login_user'];
+                $result = mysqli_query($con, "select patron_balance from patron where library_card_id = $library_card_id;")->fetch_object()->patron_balance;
+                echo '$' . $result;
+                ?>
+                </h4>
+            <!-- Payment information is placeholder and will not be implemented for this project -->
             </div>    
              <div class="form-group row" style="background-color: EEEEEE;">
                 <div class="checked-out-item">
                     <form>
                         <div class ="form-group row">
                             <h3 align="center"><b>Payment Information</b></h3>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name">Amount to pay</label>
+                            <input id="name" type="text" class="form-control" style="width: 15%;">
                         </div>
                         <div class="form-group row">
                             <label for="name">Full Name as appears on card</label>
