@@ -15,8 +15,9 @@ include('./scripts/session.php');
     <h2 style="margin-left: 3%">Fees</h2>   
     <h4 style="margin-left: 3%"></h4>
     <hr>
-    <div class="row col-md-6" style="left: 5%;">    
-        <form>
+    <div class="row col-md-6" style="left: 5%;">   
+        <!-- Form posts all data and calls payment.php -->
+        <form action="./scripts/payment.php" method="post">
             <div class="form-group row">    
                 <h4 align="center">Account Fees: 
                 <?php
@@ -40,8 +41,8 @@ include('./scripts/session.php');
                             <h3 align="center"><b>Payment Information</b></h3>
                         </div>
                         <div class="form-group row">
-                            <label for="name">Amount to pay</label>
-                            <input id="name" type="text" class="form-control" style="width: 15%;">
+                            <label for="amount">Amount to pay</label>
+                            <input name="amount" id="amount" type="text" class="form-control" style="width: 15%;">
                         </div>
                         <div class="form-group row">
                             <label for="name">Full Name as appears on card</label>
@@ -62,7 +63,7 @@ include('./scripts/session.php');
                     </form>
                 </div>
             <div class="form-group row">
-                <button type="button" class="btn btn-secondary" style="float:right; margin-right:30px;" id="paybtn">Submit Payment</button>
+                <button type="submit" class="btn btn-secondary" style="float:right; margin-right:30px;" id="paybtn">Submit Payment</button>
             </div>
             </div>
                        
