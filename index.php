@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('./scripts/session.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +12,7 @@
 </head>
 <body background="./img/Background_Books2.png">                
 
-<?php include './html/navbar.html'; ?>
+<?php include './html/navbar.php'; ?>
 <div id="wrapper">
     <h1 style = "font-size: 450%; margin-left: 5%; margin-top: 5%;">Welcome to the West Wumbo Library</h1>            
     <br />

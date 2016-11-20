@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+include('./scripts/session.php');
+?>
 <head>
     <?php include './html/header.html'; ?>
     <Title>Checkout</Title>
@@ -7,7 +10,7 @@
 </head>
 
 <body>
-<?php include './html/navbar.html'; ?>
+<?php include './html/navbar.php'; ?>
 <div id="wrapper">
     <h2 style="margin-left: 3%">Fees</h2>   
     <h4 style="margin-left: 3%"></h4>
