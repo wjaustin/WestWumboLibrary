@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
         $con = mysqli_connect("localhost", "root", "", "library");
         $username = mysqli_real_escape_string($con, $_POST['username']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
-        $query = mysqli_query($con, "select * from patrons where patron_username='$username' and patron_password='$password';");
+        $query = mysqli_query($con, "select * from patron where library_card_id='$username' and patron_password='$password';");
         $rows = mysqli_num_rows($query);
         if($rows == 1){
             $_SESSION['login_user']=$username;
