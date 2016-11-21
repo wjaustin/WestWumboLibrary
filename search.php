@@ -15,24 +15,35 @@ include('./scripts/session.php');
     <h4 style="margin-left: 3%"></h4>
     <hr>
     <div class="row col-md-3" style="left: 5%;">    
-        <form>             
-             <div class="form-group row">
-                <div class="checked-out-item">
-                    <form>                    
-                        <div class="form-group row">  
-                            <br>                            
-                            <div class="input-group">
-                               <input type="text" class="form-control">
-                               <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Search!</button>
-                               </span>
-                            </div>
-                        </div>                      
-                    </form>
-                </div>           
-            </div>
-                       
-        </form>
-    </div>      
+         <div class="form-group row">
+            <div class="checked-out-item">
+                <form action="#" method="post">                    
+                    <div class="form-group row">
+                        <br>                            
+                        <div class="input-group">
+                           <input name="search" type="text" class="form-control">
+                           <span class="input-group-btn">
+                                <button name="submit" class="btn btn-default" type="submit">Search!</button>
+                           </span>
+                        </div>
+                    </div>   
+                    <span><?php echo $error; ?></span>
+                    <span><?php 
+                        if(is_array($bookTitle)){
+                            for ($i = 0; $i < count($bookTitle); $i++) {
+                                echo $bookTitle[i];
+                                echo '<br />';
+                                echo $bookISBN[i];
+                                echo '<br />';
+                            }
+                        }else{
+                            echo $result;
+                        }
+                        
+                    ?></span>
+                </form>
+            </div>           
+        </div>
+    </div>  
 </div>
 </body>
