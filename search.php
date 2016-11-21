@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('./scripts/session.php');
+include('./scripts/discover.php');
 ?>
 <head>
     <?php include './html/header.html'; ?>
