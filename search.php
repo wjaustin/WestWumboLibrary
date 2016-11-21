@@ -5,7 +5,7 @@ include('./scripts/discover.php');
 ?>
 <head>
     <?php include './html/header.html'; ?>
-    <Title>Checkout</Title>
+    <Title>Search</Title>
     <link href="./css/SolidSidenav.css" rel="stylesheet" />
 </head>
 
