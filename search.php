@@ -7,6 +7,8 @@ include('./scripts/discover.php');
     <?php include './html/header.html'; ?>
     <Title>Search</Title>
     <link href="./css/SolidSidenav.css" rel="stylesheet" />
+    <link href="./css/checkout.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -30,17 +32,16 @@ include('./scripts/discover.php');
                     </div>   
                     <span><?php echo $error; ?></span>
                     <span><?php 
-                        if(is_array($bookTitle)){
-                            for ($i = 0; $i < count($bookTitle); $i++) {
-                                echo $bookTitle[i];
-                                echo '<br />';
-                                echo $bookISBN[i];
-                                echo '<br />';
-                            }
-                        }else{
-                            echo $result;
+                        while($results = mysqli_fetch_array($query)){
+                        // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
+                            
+                            //$result[i]="<p><h3>".$results['book_title']."</h3>".$results['isbn']."</p>";
+                            echo $results['book_title']. '<br />';
+                            echo $results['isbn'];
+                            echo '<br /><br />';
+                            // posts results gotten from database(title and text) you can also show id ($results['id']
                         }
-                        
+                        echo $result;
                     ?></span>
                 </form>
             </div>           
