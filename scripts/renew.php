@@ -15,10 +15,13 @@ $library_card_id = $_SESSION['login_user'];
 $result = mysqli_query($con, "select date_due, rem_renewals, rental_id 
 from rented_book where library_card_id = $library_card_id;");
 
-$checkbox = $_POST['checkbox0'];
 
+//$checkbox = $_POST['checkbox0'];
 $num = 0;
 while ($row = $result->fetch_assoc()) {
+    $name = 'checkbox' . $num;
+    $checkbox = $_POST[$name];
+    error_log("Debug0: " . $name . ":" . $checkbox);
     if ($checkbox == 1) {
         // Checkbox is checked, renew this book
         $rem_renewals = $row["rem_renewals"];
@@ -34,8 +37,7 @@ while ($row = $result->fetch_assoc()) {
         }
     }
     $num += 1;
-    $name = 'checkbox' . $num;
-    $checkbox = $_POST[$name];
+    
 }
 
 header("Location: ../checkout.php");

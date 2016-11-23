@@ -25,7 +25,6 @@ $num = 0;
 while ($row = $result->fetch_assoc()) {
     echo '<div class="form-group row" style="background-color: EEEEEE;">
                         <div class="checked-out-item">
-                            <form>
                                 <div class ="form-group row">
                                     <h4><b>';
                                         // Book Title
@@ -48,7 +47,6 @@ while ($row = $result->fetch_assoc()) {
                                         echo ' </div><div class ="form-group row"><h4>Due: ' . $row["date_due"] . ' / ' . $row["rem_renewals"] . ' Renewals Remaining';
                                         echo '</h4>      
                                 </div>
-                            </form>
                         </div>
                     </div>';
     $num += 1;
