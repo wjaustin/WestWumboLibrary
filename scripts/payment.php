@@ -26,7 +26,7 @@ if(!isset($_SESSION['login_user'])){
                 $result -= $amount;
                 $result = mysqli_query($con, "update patron set patron_balance='$result' where library_card_id = $library_card_id;");
                 if ($result) {
-                    header("Location: https://dev-wjaustin.c9users.io/fees.php");
+                    header("Location: ../fees.php");
                 } else {
                     // TODO ERROR: FAILED TO UPDATE
                     echo 'FAILED TO UPDATE BALANCE';

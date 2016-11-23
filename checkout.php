@@ -10,7 +10,7 @@ include('./scripts/session.php');
 </head>
 
 <body>
-<?php include './html/navbar.php'; ?>
+<?php include 'navbar.php'; ?>
 <div id="wrapper">
     <h2 style="margin-left: 3%">Checked Out</h2> 
     <?php

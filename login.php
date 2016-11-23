@@ -13,7 +13,7 @@ header("location: checkout.php");
     <Title>Login</Title>
     <link href="./css/SolidSidenav.css" rel="stylesheet" />	</head>
 <body>
-    <?php include './html/navbar.php'; ?>
+    <?php include 'navbar.php'; ?>
      
     <div id="wrapper">   
         <h2 style="margin-left: 3%">Log in.</h2>   

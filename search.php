@@ -12,7 +12,7 @@ include('./scripts/discover.php');
 </head>
 
 <body>
-<?php include './html/navbar.php'; ?>
+<?php include 'navbar.php'; ?>
 <div id="wrapper">
     <h2 style="margin-left: 3%">Search</h2>   
     <h4 style="margin-left: 3%"></h4>
