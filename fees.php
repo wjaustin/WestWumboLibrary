@@ -30,6 +30,10 @@ include('./scripts/session.php');
                 $library_card_id = $_SESSION['login_user'];
                 $result = mysqli_query($con, "select patron_balance from patron where library_card_id = $library_card_id;")->fetch_object()->patron_balance;
                 echo '$' . $result;
+                if (isset($_SESSION['error_msg'])) {
+                    echo '<p>Error: ' . $_SESSION['error_msg'] . '</p>';
+                    unset($_SESSION['error_msg']);
+                }
                 ?>
                 </h4>
             <!-- Payment information is placeholder and will not be implemented for this project -->

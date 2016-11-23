@@ -29,18 +29,22 @@ if(!isset($_SESSION['login_user'])){
                     header("Location: ../fees.php");
                 } else {
                     // TODO ERROR: FAILED TO UPDATE
-                    echo 'FAILED TO UPDATE BALANCE';
+                    error_log("Failed to update balance for library_card_id=" . $_SESSION['login_user']);
+                    $_SESSION['error_msg'] = "Updating balance failed";
+                    header("Location: ../fees.php");
                 }
             }
         
         } else {
             // TODO THROW ERROR: AMOUNT NOT PROPERLY FORMATTED
-            echo 'AMOUNT IMPROPERLY FORMATTED';
+            $_SESSION['error_msg'] = "Please format your amount correctly: (dollars).(cents)";
+            header("Location: ../fees.php");
         }
         
     } else {
         // TODO THROW ERROR: NO AMOUNT PROVIDED
-        echo 'NO AMOUNT PROVIDED';
+        $_SESSION['error_msg'] = "No amount provided";
+        header("Location: ../fees.php");
     }
 }
 ?>

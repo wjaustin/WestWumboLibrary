@@ -24,6 +24,10 @@ include('./scripts/session.php');
                 <form action="./scripts/renew.php" method="post">
                     <div class="form-group row">    
                         <h4>';
+                        if (isset($_SESSION['error_msg'])) {
+                            echo '<p>Error: ' . $_SESSION['error_msg'] . '</p>';
+                            unset($_SESSION['error_msg']);
+                        }
                         include('./scripts/getNumOut.php');
                         include('./scripts/generateRenewTables.php');
                         echo '

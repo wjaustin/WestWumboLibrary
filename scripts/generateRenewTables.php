@@ -37,20 +37,16 @@ while ($row = $result->fetch_assoc()) {
                                     <h4 style="display: inline; float: left;">';
     // Book Author
     echo $row["author_fname"] . ' ' . $row["author_lname"];
+    if ($row["rem_renewals"] > 0) {
     echo '</h4>                
                                     <h4 name=checkbox class = "checked-out-checkbox" align="right"><label class="checkbox-inline">';
                                     // Creation of checkboxes, specifying a posted value 0 if unchecked and 1 if checked
                                     echo '<input type="hidden" value="0" name="checkbox' . $num . '">';
                                     echo '<input type="checkbox" value="1" name="checkbox' . $num . '">';
-                                    //echo '<input type="checkbox" ';
-                                    //echo 'name=checkbox' . $num;
-                                    //echo '>renew</label></h4>
-                                    echo 'renew</label></h4>
-                                </div>
-                                <div class ="form-group row">
-                                    <h4>';
+                                    echo 'renew</label></h4>';
+    }
                                         // Book Due Date and Remaining Renewals
-                                        echo 'Due: ' . $row["date_due"] . ' / ' . $row["rem_renewals"] . ' Renewals Remaining';
+                                        echo ' </div><div class ="form-group row"><h4>Due: ' . $row["date_due"] . ' / ' . $row["rem_renewals"] . ' Renewals Remaining';
                                         echo '</h4>      
                                 </div>
                             </form>

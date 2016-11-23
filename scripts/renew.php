@@ -29,15 +29,14 @@ while (isset($checkbox)) {
             $rem_renewals -= 1;
             $rental_id = $row["rental_id"];
             $output = mysqli_query($con, "update rented_book set date_due = date_add(curdate(), interval 7 day), rem_renewals = $rem_renewals where rental_id = $rental_id;");
-            if($output) {
-                header("Location: ../checkout.php");
-            } else {
-                echo 'failure';
-                echo ' ' . $rental_id . ' ' . $rem_renewals;
+            if(! $output) {
+                error_log("Failed to renew book for rental_id=$rental_id, library_card_id=$library_card_id");
+                $_SESSION['error_msg'] = "Failed to renew book";
             }
         }
     }
     $num += 1;
     $checkbox = $_POST['checkbox' . $num];
 }
+header("Location: ../checkout.php");
 ?>
