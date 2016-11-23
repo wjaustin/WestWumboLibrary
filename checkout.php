@@ -21,7 +21,7 @@ include('./scripts/session.php');
             <h4 style="margin-left: 3%"></h4>
             <hr>
             <div class="row col-md-6" style="left: 5%;">    
-                <form>
+                <form action="./scripts/renew.php" method="post">
                     <div class="form-group row">    
                         <h4>';
                         include('./scripts/getNumOut.php');
