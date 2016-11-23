@@ -18,11 +18,9 @@ from rented_book where library_card_id = $library_card_id;");
 $checkbox = $_POST['checkbox0'];
 
 $num = 0;
-while (isset($checkbox)) {
+while ($row = $result->fetch_assoc()) {
     if ($checkbox == 1) {
         // Checkbox is checked, renew this book
-        $row = $result->fetch_assoc();
-        //$rem_renewals = $row["rem_renewals"];
         $rem_renewals = $row["rem_renewals"];
         if($rem_renewals > 0) {
             // Remaining renewals is greater than 0, continue with renewal
@@ -36,7 +34,9 @@ while (isset($checkbox)) {
         }
     }
     $num += 1;
-    $checkbox = $_POST['checkbox' . $num];
+    $name = 'checkbox' . $num;
+    $checkbox = $_POST[$name];
 }
+
 header("Location: ../checkout.php");
 ?>

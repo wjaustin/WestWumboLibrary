@@ -21,9 +21,8 @@ if ($result->num_rows == 0) {
     die();
 }
 // Loop through each row and create a HTML table for it
-$num = -1;
+$num = 0;
 while ($row = $result->fetch_assoc()) {
-    $num += 1;
     echo '<div class="form-group row" style="background-color: EEEEEE;">
                         <div class="checked-out-item">
                             <form>
@@ -39,7 +38,7 @@ while ($row = $result->fetch_assoc()) {
     echo $row["author_fname"] . ' ' . $row["author_lname"];
     if ($row["rem_renewals"] > 0) {
     echo '</h4>                
-                                    <h4 name=checkbox class = "checked-out-checkbox" align="right"><label class="checkbox-inline">';
+                                    <h4 name=checkbox' . $num . ' class = "checked-out-checkbox" align="right"><label class="checkbox-inline">';
                                     // Creation of checkboxes, specifying a posted value 0 if unchecked and 1 if checked
                                     echo '<input type="hidden" value="0" name="checkbox' . $num . '">';
                                     echo '<input type="checkbox" value="1" name="checkbox' . $num . '">';
@@ -52,6 +51,7 @@ while ($row = $result->fetch_assoc()) {
                             </form>
                         </div>
                     </div>';
+    $num += 1;
 }
 echo '<div class="form-group row">
                         <button type="submit" class="btn btn-secondary" style="float:right">Renew</button>

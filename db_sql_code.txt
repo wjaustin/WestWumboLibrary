@@ -1,0 +1,48 @@
+CREATE TABLE 'author' (
+  'author_id' int(11) NOT NULL PRIMARY KEY,
+  'author_fname' varchar(255) NOT NULL,
+  'author_lname' varchar(255) NOT NULL,
+);
+
+CREATE TABLE 'category' (
+  'category_id' int(11) NOT NULL PRIMARY KEY,
+  'category_name' varchar(255) DEFAULT NULL,
+);
+
+CREATE TABLE 'book' (
+  'isbn' int(11) NOT NULL PRIMARY KEY,
+  'book_title' varchar(255) DEFAULT NULL,
+  'author_id' int(11) DEFAULT NULL,
+  'pub_date' date DEFAULT NULL,
+  'category_id' int(11) DEFAULT NULL,
+  'stock' tinyint(4) DEFAULT NULL,
+  'max_renewals' tinyint(4) DEFAULT NULL,
+  FOREIGN KEY ('author_id') REFERENCES 'author' ('author_id'),
+  FOREIGN KEY ('category_id') REFERENCES 'category' ('category_id')
+);
+
+CREATE TABLE 'patron' (
+  'library_card_id' int(11) NOT NULL PRIMARY KEY,
+  'patron_fname' varchar(20) DEFAULT NULL,
+  'patron_lname' varchar(20) DEFAULT NULL,
+  'patron_password' varchar(128) DEFAULT NULL,
+  'patron_balance' decimal(3,2) DEFAULT NULL,
+);
+
+CREATE TABLE 'rented_book' (
+  'rental_id' int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  'library_card_id' int(11) DEFAULT NULL,
+  'book_id' int(11) DEFAULT NULL,
+  'date_rented' date DEFAULT NULL,
+  'date_due' date DEFAULT NULL,
+  'rem_renewals' tinyint(2) DEFAULT NULL,
+  FOREIGN KEY ('library_card_id') REFERENCES 'patron' ('library_card_id'),
+  FOREIGN KEY ('book_id') REFERENCES 'book_copy' ('book_id')
+);
+  
+CREATE TABLE 'book_copy' (
+  'book_id' int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  'ISBN' int(11) DEFAULT NULL,
+  'in_stock' tinyint(4) DEFAULT NULL,
+  FOREIGN KEY ('ISBN') REFERENCES 'book' ('isbn')
+);
