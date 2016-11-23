@@ -6,14 +6,20 @@ if ($conn -> connect_error) {
 }
 
 $library_card_id = $_SESSION['login_user'];
-$result = mysqli_query($con, "select book.book_title, author.author_fname, author.author_lname, rented_book.date_due, rented_book.rem_renewals 
-from rented_book, book_copy, book, author where library_card_id = $library_card_id;");
+$result = mysqli_query($con, "select r.rental_id, bc.book_id, r.date_due, a.author_fname, a.author_lname, r.library_card_id, b.book_title, r.rem_renewals 
+from rented_book r 
+LEFT JOIN book_copy bc 
+ON r.book_id=bc.book_id 
+LEFT JOIN book b 
+on b.isbn=bc.ISBN
+LEFT JOIN author a
+on b.author_id=a.author_id
+where r.library_card_id=$library_card_id;");
 
 // If no rented books, halt execution
 if ($result->num_rows == 0) {
     die();
 }
-
 // Loop through each row and create a HTML table for it
 $num = -1;
 while ($row = $result->fetch_assoc()) {
@@ -23,9 +29,9 @@ while ($row = $result->fetch_assoc()) {
                             <form>
                                 <div class ="form-group row">
                                     <h4><b>';
-    // Book Title
-    echo $row["book_title"];
-    echo '</b></h4>
+                                        // Book Title
+                                        echo $row["book_title"];
+                                        echo '</b></h4>
                                 </div>
                                 <div class ="form-group row">
                                     <h4 style="display: inline; float: left;">';
@@ -43,9 +49,9 @@ while ($row = $result->fetch_assoc()) {
                                 </div>
                                 <div class ="form-group row">
                                     <h4>';
-    // Book Due Date and Remaining Renewals
-    echo 'Due: ' . $row["date_due"] . ' / ' . $row["rem_renewals"] . ' Renewals Remaining';
-    echo '</h4>      
+                                        // Book Due Date and Remaining Renewals
+                                        echo 'Due: ' . $row["date_due"] . ' / ' . $row["rem_renewals"] . ' Renewals Remaining';
+                                        echo '</h4>      
                                 </div>
                             </form>
                         </div>

@@ -30,7 +30,7 @@ while (isset($checkbox)) {
             $rental_id = $row["rental_id"];
             $output = mysqli_query($con, "update rented_book set date_due = date_add(curdate(), interval 7 day), rem_renewals = $rem_renewals where rental_id = $rental_id;");
             if($output) {
-                echo 'success';
+                header("Location: ../checkout.php");
             } else {
                 echo 'failure';
                 echo ' ' . $rental_id . ' ' . $rem_renewals;
