@@ -6,7 +6,7 @@ if ($conn -> connect_error) {
 }
 
 $library_card_id = $_SESSION['login_user'];
-$result = mysqli_query($con, "select r.rental_id, bc.book_id, r.date_due, a.author_fname, a.author_lname, r.library_card_id, b.book_title, r.rem_renewals 
+$result = mysqli_query($con, "select CURDATE(), r.rental_id, bc.book_id, r.date_due, a.author_fname, a.author_lname, r.library_card_id, b.book_title, r.rem_renewals 
 from rented_book r 
 LEFT JOIN book_copy bc 
 ON r.book_id=bc.book_id 
@@ -35,7 +35,9 @@ while ($row = $result->fetch_assoc()) {
                                     <h4 style="display: inline; float: left;">';
     // Book Author
     echo $row["author_fname"] . ' ' . $row["author_lname"];
-    if ($row["rem_renewals"] > 0) {
+    if ($row["CURDATE()"] > $row["date_due"]) {
+        echo '<h4 align="right">overdue</h4>';
+    } elseif ($row["rem_renewals"] > 0) {
     echo '</h4>                
                                     <h4 name=checkbox' . $num . ' class = "checked-out-checkbox" align="right"><label class="checkbox-inline">';
                                     // Creation of checkboxes, specifying a posted value 0 if unchecked and 1 if checked
